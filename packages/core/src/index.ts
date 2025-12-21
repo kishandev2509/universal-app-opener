@@ -1,4 +1,5 @@
 import { instagramHandler, linkedinHandler, unknownHandler, youtubeHandler } from "./platforms";
+import { telegramHandler } from "./platforms/telegram";
 import { DeepLinkResult } from "./types";
 
 export * from './types';
@@ -6,7 +7,8 @@ export * from './types';
 const handlers = [
   youtubeHandler,
   linkedinHandler,
-  instagramHandler
+  instagramHandler,
+  telegramHandler
 ];
 export function generateDeepLink(url: string): DeepLinkResult {
   const webUrl = url.trim();
