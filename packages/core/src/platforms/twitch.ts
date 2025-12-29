@@ -36,18 +36,19 @@ export const twitchHandler: DeepLinkHandler = {
     const type = match[1];
     const id = match[2];
 
+    let iosDeepLink = '';
+
     if (!id) {
-      return {
-        webUrl,
-        ios: `twitch://${type}`,
-        android: `intent://${matchUrl}#Intent;scheme=https;package=tv.twitch.android.app;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`,
-        platform: 'twitch',
-      };
+      iosDeepLink = `twitch://${type}`;
+    } else if (type === 'broadcast') {
+      iosDeepLink = `twitch://broadcast?game_id=${id}`;
+    } else {
+      iosDeepLink = `twitch://${type}/${id}`;
     }
 
     return {
       webUrl,
-      ios: `twitch://${type}/${id}`,
+      ios: iosDeepLink,
       android: `intent://${matchUrl}#Intent;scheme=https;package=tv.twitch.android.app;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`,
       platform: 'twitch',
     };
