@@ -196,8 +196,12 @@ const result = generateDeepLink(
 
 ```typescript
 const result = generateDeepLink('https://www.hotstar.com/in/movies/sholay/1271513578/watch');
-// result.ios: 'hotstar://1271513578'
+// result.ios: 'hotstar://content/1271513578'
 // result.android: 'intent://1271513578#Intent;scheme=hotstar;package=in.startv.hotstar;end'
+
+const result = generateDeepLink('https://www.hotstar.com/in/shows/mrs-deshpande/1271508620/takes-one-to-catch-one/1271513221/watch');
+// result.ios: 'hotstar://content/1271513221'
+// result.android: 'intent://1271513221#Intent;scheme=hotstar;package=in.startv.hotstar;end'
 ```
 
 ### Unknown URL
