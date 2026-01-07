@@ -1,10 +1,7 @@
 import { DeepLinkHandler } from '../types';
 
 export const telegramHandler: DeepLinkHandler = {
-  match: (url) =>
-    url.match(
-      /(?:^|\/\/)(?:www\.)?(?:t\.me|telegram\.me)\/([^/?]+)(?:\/(\d+))?/
-    ),
+  match: (url) => url.match(/(?:^|\/\/)(?:www\.)?(?:t\.me|telegram\.me)\/([^/?]+)(?:\/(\d+))?/),
 
   build: (webUrl, match) => {
     const username = match[1];
