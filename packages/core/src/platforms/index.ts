@@ -11,6 +11,7 @@ import { twitchHandler } from './twitch';
 import { unknownHandler } from './unknown';
 import { whatsappHandler } from './whatsapp';
 import { youtubeHandler } from './youtube';
+import { telegramHandler } from "./telegram";
 
 export {
   linkedinHandler,
@@ -26,4 +27,5 @@ export {
   pinterestHandler,
   twitchHandler,
   unknownHandler,
+  telegramHandler,
 };
